@@ -47,7 +47,7 @@ ob_start();
                 </div>
                 <div class="billies-mkWpLightning-item">
                     <input type="checkbox" name="chk"  class="billies-mkWpLightning-item-chkClass">
-                    サイトタイトルを「花のお店」、キャッチフレーズを「のお店」とする。
+                    サイトタイトルを「Florista Lindo」、キャッチフレーズを「市ヶ谷にある花のお店です」とする。
                 </div>
                 <div class="billies-mkWpLightning-item">
                     <input type="checkbox" name="chk"  class="billies-mkWpLightning-item-chkClass">
@@ -107,10 +107,10 @@ ob_start();
 							</tr>
                             <tr>
                                 <th>本文</th>
-								<td>こんにちは。
-　　　　　　　						たまに好きな花は何ですかという質問を受けることがあるのですが、私の好きな花は・・・やっぱりバラの花！
-　　　　　　　						小さい頃から、バラの花束をプレゼントしてもらうのが夢でした（笑）
-　　　　　　　						まだその夢は叶っていませんが(^^;;</td>
+								<td>こんにちは。<br
+　　　　　　　						>たまに好きな花は何ですかという質問を受けることがあるのですが、私の好きな花は・・・やっぱりバラの花！<br
+　　　　　　　						>小さい頃から、バラの花束をプレゼントしてもらうのが夢でした（笑）<br
+　　　　　　　						>まだその夢は叶っていませんが(^^;;</td>
                             </tr>
                             <tr>
                                 <th>画像</th>
@@ -121,6 +121,10 @@ ob_start();
 									画像の位置；文章の先頭「こんにちは」の上<br>
 									画像の配置：「左」を選択</td>
                             </tr>
+							<tr>
+								<th>パーマリンク</th>
+								<td>rose</td>
+							</tr>
                         </table>
                     </div>
                 </div>
@@ -136,7 +140,7 @@ ob_start();
                             </tr>
                             <tr>
                                 <td>お知らせ</td>
-                                <td>new</td>
+                                <td>news</td>
 								<td> - </td>
                             </tr>
                             <tr>
@@ -167,6 +171,10 @@ ob_start();
 									季節の花、イベントの花や葬儀花、観葉植物など取り揃えています。<br>
 									どうぞお気軽に足を運んでください。</td>
 							</tr>
+							<tr>
+								<th>パーマリンク</th>
+								<td>shop-info</td>
+							</tr>
                         </table>
                     </div>
                 </div>
@@ -185,6 +193,9 @@ ob_start();
 							<tr><td>スクール</td><td>School</td></tr>
 							<tr><td>お問い合わせ</td><td>Infomation</td></tr>
 						</table>
+						<p>※「アクセス」「ギャラリー」「スクール」「お問い合わせ」の固定ページを作っておく。</p>
+						<p>※（説明）は、画面右上の「表示オプション」を開いて、「説明」にチェック。</p>
+
                     </div>
                 </div>
                 <div class="billies-mkWpLightning-item">
@@ -206,7 +217,7 @@ ob_start();
 							</tr>
 							<tr>
 								<th>挿入アイテムの設定</th>	
-								<tr>「HTMLサイトマップの表示」にチャック</td>
+								<td>「HTMLサイトマップの表示」にチェック</td>
 							</tr>
                         </table>
                     </div>
