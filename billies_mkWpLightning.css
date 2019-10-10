@@ -58,7 +58,7 @@ th {
 
 #billies-mkWpLightning-menu-box {
 	position: absolute;
-	top: 0;
+	top: 30px;
 	right: 10px;
   display: none;
   z-index: 1111;
