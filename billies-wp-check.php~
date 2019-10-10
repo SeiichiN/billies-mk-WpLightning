@@ -1,0 +1,576 @@
+<?php
+/*
+ * @wordpress-plugin
+ * Plugin Name: Billies WP Check
+ * Description: Check Sheet for WordPress Saitama Theme -- [insert_billies_wpcheck]
+ * Version: 0.1
+ * Author: Seiichi Nukayama
+ * URL: http://www.billies-works.com/
+ */
+function billies_wp_check_add_files () {
+  wp_enqueue_style('css-billies-wp-check', plugins_url('billies_wpcheck.css', __FILE__));
+  wp_enqueue_script('js-billies-wp-check', plugins_url('billies_wpcheck.js', __FILE__), array(), false, false);
+}
+add_action('wp_enqueue_scripts', 'billies_wp_check_add_files');
+
+
+function billies_wpcheck_form () {
+
+ob_start();
+?>
+    <div id="wrap">
+        <h1>WordPress チェック</h1>
+        <section class="check">
+            <p>WordPressの理解度をチェックしてみよう</p>
+            <form id="checkform" name="checkform">
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk01" class="chkClass">
+                    パーマリンクを「日付・投稿名」に設定する。(p46)
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk02" class="chkClass">
+                    ユーザー名のニックネームを設定する。(p50)
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk03" class="chkClass">
+                    テーマに「saitama」を選択し、有効化する。(p60)
+                    「外観」－「テーマ」－「新規追加」－「テーマを検索」で「saitama」と入力。
+                    「saitama」テーマを「インストール」・「有効化」する。
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk04" class="chkClass">
+                    プラグイン「WP Multibyte Patch」をインストールし、有効化する。(p115)
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk05" class="chkClass">
+                    ヘッダー画像に「ヘッダー画像」の「slider-01.jpg」を指定する。(p62)
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk06" class="chkClass">
+                    サイトタイトルを「お菓子と雑貨のお店」、キャッチフレーズを「手作りお菓子と雑貨のお店」とする。(p67)
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk07" class="chkClass">
+                    サイトロゴを「ヘッダーロゴ」の「logo_name.png」にする。(p68)
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk08" class="chkClass">
+                    テーマカラーを「#e0a80b」、テーマカラー（暗）を「#997309」に設定する。(p69)
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk09" class="chkClass">
+                    スライドショーを設定する。画像は、「ヘッダー画像」フォルダの中の3つの画像を使う。(p71)<br>
+                    （キャプション・代替テキストは、今回は省略）
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk10" class="chkClass">
+                    以下のカテゴリーを追加する。(p101)
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>名前</th>
+                                <th>スラッグ</th>
+                            </tr>
+                            <tr>
+                                <td>sweets</td>
+                                <td>sweets</td>
+                            </tr>
+                            <tr>
+                                <td>news</td>
+                                <td>news</td>
+                            </tr>
+                            <tr>
+                                <td>event</td>
+                                <td>event</td>
+                            </tr>
+                            <tr>
+                                <td>cookies</td>
+                                <td>cookies</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk11" class="chkClass">
+                    投稿記事を新規追加する。<br>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>タイトル</th>
+                                <td>クッキーコンテストで優勝しました！</td>
+                            </tr>
+                            <tr>
+                                <th>本文</th>
+                                <td>大宮駅西口のけやき公園で6月3日、埼玉県内のパティスリーが作る焼き菓子を対象とした「第3回クッキーコンテスト」が開かれ、「お菓子と雑貨のお店　コミュニティコム」の「にこにこクッキー」が見事優勝しました！<br>
+
+                                    「お菓子と雑貨のお店　コミュニティコム」の「にこにこクッキー」が見事優勝しました！<br>
+
+                                    3回目となる今年は県内135店が応募、「お菓子と雑貨のお店　コミュニティコム」を含む5店が最終審査をプレゼンテーションできそいました。<br>
+
+                                    審査は、5名の特別審査委員のほか、一般来場者も試食をした上で最も魅力的だと感じた製品に投票し、その獲得点数を競います。各店のスピーチでは、「何度も試食した」「埼玉県産の素材で作った」などの話が披露されました。</td>
+                            </tr>
+                            <tr>
+                                <th>Altテキスト</th>
+                                <td>「にこにこクッキー」(p88)</td>
+                            </tr>
+                            <tr>
+                                <th>画像</th>
+                                <td>「記事画像」フォルダの「img_niconicocookie01.jpg」(p86)<br>
+                                    画像サイズ：「大」<br>
+                                    リンク設定：リンク先「メディアファイル」<br>
+                                    新しいタブで開く：ＯＮ</td>
+                            </tr>
+                            <tr>
+                                <th>パーマリンク</th>
+                                <td>「news-1」(p84)</td>
+                            </tr>
+                            <tr>
+                                <th>カテゴリー</th>
+                                <td>「news」(p102)</td>
+                            </tr>
+                            <tr>
+                                <th>タグ</th>
+                                <td>「ニュース」「コンテスト」(p103)</td>
+                            </tr>
+                            <tr>
+                                <th>アイキャッチ画像</th>
+                                <td>本文と同じ画像（img_niconicocookie01.jpg）(p105)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk12" class="chkClass">
+                    上のページに投稿記事を追加する(p98)<br>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th colspan="2">本文</th>
+                                <td>優勝した「にこにこクッキー」は、サクッと軽くシナモンがふんわりと効いた、お店の人気商品です。食べるときは、自然と笑顔になりますよ。</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="3">メディアと文章</th>
+                                <th>画像</th>
+                                <td>img_niconicocookie01.jpg</td>
+                            </tr>
+                            <tr>
+                                <th>段落</th>
+                                <td>にこにこクッキーです</td>
+                            </tr>
+                            <tr>
+                                <th>段落</th>
+                                <td>これからもよろしくお願いします。</td>
+                            </tr>
+                        </table>
+                        <p>画像を右に、文字を左にしておく。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk13" class="chkClass">
+                    投稿ページを作成する。(p108)<br>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>タイトル</th>
+                                <td>オープニングイベントのご案内</td>
+                            </tr>
+                            <tr>
+                                <th>画像</th>
+                                <td>img_niconicocookie02.jpg</td>
+                            </tr>
+                            <tr>
+                                <th>本文</th>
+                                <td>「お菓子と雑貨のお店　コミュニティコム」のオープンをお祝いして、3日間のオープニングイベントをおこないます！</td>
+                            </tr>
+                            <tr>
+                                <th>パーマリンク</th>
+                                <td>opening-event</td>
+                            </tr>
+                            <tr>
+                                <th>カテゴリ</th>
+                                <td>event, news</td>
+                            </tr>
+                            <tr>
+                                <th>タグ</th>
+                                <td>イベント,キャンペーン,ニュース</td>
+                            </tr>
+                            <tr>
+                                <th>アイキャッチ画像</th>
+                                <td>同じ</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk14" class="chkClass">
+                    投稿ページを作成する<br>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>タイトル</th>
+                                <td>お菓子と雑貨のお店オープン</td>
+                            </tr>
+                            <tr>
+                                <th>画像</th>
+                                <td>img_shop.jpg</td>
+                            </tr>
+                            <tr>
+                                <th>本文</th>
+                                <td>こんにちは！　「お菓子と雑貨のお店　コミュニティコム」スタッフです。今までイベント出店は期間限定ショップなど</td>
+                            </tr>
+                            <tr>
+                                <th>パーマリンク</th>
+                                <td>shop-open</td>
+                            </tr>
+                            <tr>
+                                <th>カテゴリ</th>
+                                <td>news</td>
+                            </tr>
+                            <tr>
+                                <th>タグ</th>
+                                <td>ニュース</td>
+                            </tr>
+                            <th>アイキャッチ画像</th>
+                            <td>同じ</td>
+                        </table>
+                    </div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk15" class="chkClass">
+                    投稿ページでギャラリーを作成する。(p111)<br>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>タイトル</th>
+                                <td>商品ギャラリー</td>
+                            </tr>
+                            <tr>
+                                <th>画像</th>
+                                <td>
+                                    img_cookie01.jpg<br>
+                                    img_cookie02.jpg<br>
+                                    img_cookie03.jpg
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>カラム数</th>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <th>画像の切り抜き</th>
+                                <td>オン</td>
+                            </tr>
+                            <tr>
+                                <th>リンク先</th>
+                                <td>添付ファイル</td>
+                            </tr>
+                        </table>
+                        <table>
+                            <caption>それぞれの画像に以下の設定をする</caption>
+                            <tr>
+                                <th>画像</th>
+                                <th>タイトル</th>
+                                <th>キャプション</th>
+                                <th>代替テキスト</th>
+                                <th>説明</th>
+                            </tr>
+                            <tr>
+                                <td>img_cokkie01.jpg</td>
+                                <td>ココナッツクッキー</td>
+                                <td>ココナッツクッキー</td>
+                                <td>ココナッツクッキーの写真</td>
+                                <td>ココナッツ風味のカリッとしたシュガー</td>
+                            </tr>
+                            <tr>
+                                <td>img_cokkie02.jpg</td>
+                                <td>チーズクッキー</td>
+                                <td>チーズクッキー</td>
+                                <td>チーズクッキーの写真</td>
+                                <td>チーズの香りが効いたクッキー</td>
+                            </tr>
+                            <tr>
+                                <td>img_cokkie03.jpg</td>
+                                <td>ジンジャークッキー</td>
+                                <td>ジンジャークッキー</td>
+                                <td>ジンジャークッキーの写真</td>
+                                <td>しょうがとハチミツの組み合わせが絶妙</td>
+                            </tr>
+                        </table>
+                        <b>（パーマリンク）</b>「gallery」<br>
+                        <b>（カテゴリー）</b>「cookies」<br>
+                        <b>タグ</b>「商品」<br>
+                        <b>アイキャッチ画像</b>「img_cookies.jpg」
+                    </div>
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk16" class="chkClass">
+                    固定ページを作成する。<br>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>タイトル</th>
+                                <td>お店について</td>
+                            </tr>
+                            <tr>
+								<th>本文</th>
+								<td>（段落）クッキーを中心とした美味しいお菓子と雑貨を販売するお店です。
+									安心安全な素材を使ったお菓子と、ひとつひとつ丁寧に作られた雑貨がお店いっぱいに並んでいます。<br>
+									(h2)営業時間<br>
+									（段落）10時～18時<br>
+									(h2)定休日<br>
+									（段落）火曜日</td>
+								<tr>
+                                <th>パーマリンク</th>
+                                <td>opening-time</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk17" class="chkClass">
+                    固定ページを作成する。テーブルブロックを使う。<br>
+                    <div class="content">
+                        <table>
+                            <tr>
+                                <th>タイトル</th>
+                                <td colspan="2">会社概要</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="9">本文</th>
+								<td>事業所名</td>
+								<td>お菓子と雑貨のお店　コミュニティコム</td>
+                            </tr>
+							<tr>
+								<td>代表者</td>
+								<td>星野　邦敏（ほしの　くにとし）</td>
+							</tr>
+							<tr>
+								<td>創業年月</td>
+								<td>2019年1月</td>
+							</tr>
+							<tr>
+								<td>資本金</td>
+								<td>200万円</td>
+							</tr>
+							<tr>
+								<td>事業内容</td>
+								<td>お菓子の製造販売、雑貨の販売</td>
+							</tr>
+							<tr>
+								<td>従業員数</td>
+								<td>12人</td>
+							</tr>
+							<tr>
+								<td>会社住所</td>
+								<td>埼玉県さいたま市大宮区</td>
+							</tr>
+							<tr>
+								<td>TEL</td>
+								<td>048-XXXX-XXXX</td>
+							</tr>
+							<tr>
+								<td>URL</td>
+								<td>http://okashi-saitama.co.jp/</td>
+							</tr>
+							<tr>
+								<th>スタイル</th>
+								<td colspan="2">ストライプ</td>
+							</tr>
+                            <tr>
+                                <th>パーマリンク</th>
+                                <td colspan="2">about-company</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+				<div class="item">
+					<input type="checkbox" name="chk" id="chk18" class="chkClass">
+					固定ページを作成する
+					<div class="content">
+						<table>
+							<tr>
+								<th>タイトル</th>
+								<td>アクセス</td>
+							</tr>
+							<tr>
+								<th>本文</th>
+								<td>ぐーぐるまップで「大宮駅」を検索し、「共有」～「地図を埋め込む」で、HTMLコードをコピーする。<br>
+									それを「カスタムHTML」で貼り付けする。
+							</tr>
+							<tr>
+								<th>パーマリンク</th>
+								<td>access</td>
+							</tr>
+						</table>
+					</div>	
+				</div>
+				<div class="item">
+					<input type="checkbox" name="chk" id="chk19" class="chkClass">
+					プラグインを使って、お問い合わせページを作成する
+					<ol>
+						<li>WP Multibyte Patch プラグインをインストール・有効化する</li>
+						<li>Contact Form 7 プラグインを使う</li>
+						<ol>
+							<li>Contact Form &プラグインをインストール・有効化する</li>
+							<li>コンタクトフォームを新規追加し、名前を「お問い合わせ」とする</li>
+							<li>「フォーム」タブは初期設定のままでよい</li>
+							<li>「メール」タブの「送信先」に、受け取るためのメールアドレスを入力する</li>
+							<li>「保存」として、ショートコードをコピーしておく。</li>
+						</ol>
+						<li>固定ページを作成する。タイトルは「お問い合わせ」</li>
+						<li>本文に、ショートコードを貼り付ける。（ショートコードブロックを指定）</li>
+						<li>パーマリンクは、「contact」</li>
+					</ol>
+				</div>
+                <div class="item">
+                    <input type="checkbox" name="chk" id="chk20" class="chkClass">
+                    以下のようにメニューを作成する。(p161)<br>
+                    <div class="content">
+                        メニューの名前は、「メインメニュー」。<br>
+                        メニューの位置は、「グローバルナビ」
+                        <ul class="menu-settei">
+                            <li>ホーム</li>
+                            <li>商品ギャラリー</li>
+                            <li>会社情報</li>
+                            <ul>
+                                <li>会社概要&nbsp;(副項目)</li>
+                                <li>アクセス&nbsp;((副項目)</li>
+                            </ul>
+							<li>お店について</li>
+							<li>お問い合わせ</li>
+                        </ul>
+                    </div>
+                </div>
+				<div class="item">
+                    <input type="checkbox" name="chk" id="chk21" class="chkClass">
+					サイドバーのウィジェットを以下のように変更する。
+                    <div class="content">
+					<ol>
+						<li>「最近の投稿」・「最近のコメント」・「カテゴリー」・「メタ情報」を削除する</li>
+						<li>「タグクラウド」を追加する</li>
+						<li>「アーカイブ」のタイトルを「過去記事一覧」に変更し、「投稿数を表示」にチェックを入れる</li>
+					</ol>
+					</div>
+				</div>
+				<div class="item">
+					<input type="checkbox" name="chk" id="chk22" class="chkClass">
+					Saitama addon pack をインストール・有効化して、以下の設定をおこなう。<br>
+					<div class="content">
+						「トップページ設定」タブを開く。
+						<table>
+							<caption>トピックエリア2</caption>
+							<tr>
+								<th>タイトル</th>
+								<td>ゴールデンウィークの営業時間にすいて</td>
+							</tr>
+							<tr>
+								<th>概要</th>
+								<td>ゴールデンウィーク中は営業時間に変更がございますので、ご確認の上、ぜひご来店ください。</td>
+							</tr>
+							<tr>
+								<th>リンクURL</th>
+								<td>「ゴールデンウィーク中の営業時間について」の投稿ページのURL</td>
+							</tr>
+							<tr>
+								<th>画像URL</th>
+								<td>img_shop.jpg</td>
+							</tr>
+						</table>
+						<table>
+							<caption>トピックエリア2</caption>
+							<tr>
+								<th>タイトル</th>
+								<td>メディアに紹介されました！</td>
+							</tr>
+							<tr>
+								<th>概要</th>
+								<td>にこにこクッキーがコンテストで優勝したことを取材いただきました！ぜひご覧ください。</td>
+							</tr>
+							<tr>
+								<th>リンクURL</th>
+								<td>「メディアに紹介されました」の投稿ページのURL</td>
+							</tr>
+							<tr>
+								<th>画像URL</th>
+								<td>img_niconicocookie02.jpg</td>
+							</tr>
+						</table>
+						<p>「ウィジェット」の画面で、「Saitama_トピックエリア」を「トップページコンテンツエリア上部」に配置する。</p>
+					</div>
+				</div>
+				<div class="item">
+					<input type="checkbox" name="chk" id="chk23" class="chkClass">
+					フッターを設定する
+					<div class="content">
+					「Saitama Addon Pack」の「お問い合わせ設定」で以下の内容を入力する
+					<table>
+						<tr>
+							<th>住所</th>
+							<td>〒330-XXXX
+								埼玉県さいたま市大宮宮町1</td>
+						</tr>
+						<tr>
+							<th>E-Mail</th>
+							<td>info@okashi-saitama.co.jp</td>
+						</tr>
+						<tr>
+							<th>TEL</th>
+							<td>048-XXXX-XXXX</td>
+						</tr>
+						<tr>
+							<th>FAX</th>
+							<td>048-XXXX-XXXX</td>
+						</tr>
+					</table>
+					<p>「ウィジェット」の画面で、「Saitama_フッター_お問い合わせエリア」を「フッター３」に設定する。</p>
+					<p>「Saitama_最近の投稿」を「フッター２」に設定する。<br>
+					タイトルを「新着情報」、表示件数を「５」とする。</p>
+					</div>
+					<div class="content">
+						<p>「ウィジェット」の画面で、「テキスト」ウィジェットを「フッター１」に設定する。<br>
+						内容は以下のようにする。</p>
+						<table>
+							<tr>
+								<th>タイトル</th>
+								<td>お菓子と雑貨のお店コミュニティコム</td>
+							</tr>
+							<tr>
+								<th>ビジュアル</th>
+								<td>お菓子と雑貨のお店コミュニティコムは、クッキーを中心とした手作りの焼き菓子、雑貨をお届けするお店です。</td>
+							</tr>
+						</table>
+					</div>
+					<div class="content">
+						<p>「Saitama Addon Pack」の「SNS設定」で、<br>
+						「facebookページURL」と「twitterアカウント」にそれぞれ入力する。</p>
+						<p>「ウィジェット」画面で、「Saitama_SNSボタン」を「フッター４」に設定する。</p>
+					</div>
+				</div>
+
+
+            </form>
+			<div id="setting-btn">
+				<img src="clover.png" alt="">
+			</div>
+            <div id="menu-box">
+				<div class="btn">
+					<button type="button" id="ok-btn">ＯＫ</button>
+				</div>
+				<div class="btn">
+					<button type="button" id="save-btn">保存</button>
+				</div>
+				<div class="btn">
+					<button type="button" id="read-btn">読込</button>
+				</div>
+				<div class="btn">
+					<button type="button" id="reset-btn">初期化</button>
+				</div>
+			</div><!-- menu-box -->
+        </section>
+    </div>
+<?php
+return ob_get_clean();
+}
+add_shortcode('insert_billies_wpcheck', 'billies_wpcheck_form');
+

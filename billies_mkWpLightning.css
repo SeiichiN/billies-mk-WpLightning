@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+img {
+	max-width: 100%;
+}
+
+#billies-mkWpLightning-wrap {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+.billies-mkWpLightning-item {
+	border-bottom: dotted 1px #aaa;
+    padding: 10px 0;
+}
+
+.billies-mkWpLightning-item-content {
+    margin-left: 50px;
+}
+
+.billies-mkWpLightning-item-chkClass {
+    border: solid 2px #333;
+}
+
+table {
+	border-collapse: collapse;
+}
+th, td {
+	border: solid 1px #aaa;
+	padding: 5px;
+}
+th {
+	width: 140px;
+}
+
+.company th {
+	width: 160px;
+}
+
+.billies-mkWpLightning-item-content-menu-settei {
+	list-style-type: none;
+}
+
+.billies-mkWpLightning-item-content-menu-settei,
+.billies-mkWpLightning-item-content-menu-settei ul {
+	list-style-type: none;
+}
+.billies-mkWpLightning-item-content-menu-settei li {
+	border: solid 1px #aaa;
+	width: 250px;
+	padding: 5px 10px;
+}
+
+
+.billies-mkWpLightning-check {
+	position: relative;
+}
+
+#billies-mkWpLightning-menu-box {
+	position: absolute;
+	top: 0;
+	right: 10px;
+  display: none;
+  z-index: 1111;
+}
+
+#billies-mkWpLightning-setting-btn {
+	position: absolute;
+	top: 0;
+	right: 10px;
+  width: 100px;
+  z-index: 1111;
+}
+
